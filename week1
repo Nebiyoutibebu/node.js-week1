@@ -26,10 +26,10 @@ function createServer(port) {
     response.writeHead(200, { 'Content-Type': 'application/json'});
     return response.end(JSON.stringify({state: state}));
   }
-  else {
-    response.statusCode = 404;
-    response.writeHead(200, { 'Content-Type': 'application/json'});
-    State = { error: 'Not found'};
+ 
+   else {
+    state = { error: 'Not found'};
+    response.writeHead(404, { 'Content-Type': 'application/json'});
     return response.end(JSON.stringify({state: state}));
   }
   
